@@ -1,0 +1,289 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cell renders a normal cell 1`] = `
+<table>
+  <tbody>
+    <tr>
+      <TCell
+        Field={
+          Object {
+            "Editable": true,
+            "Name": "Name",
+            "Primary": false,
+            "Required": false,
+            "Type": "String",
+          }
+        }
+        Row={
+          Object {
+            "BuiltInCategory": "INVALID",
+            "ID": 1,
+            "Name": "A name",
+            "PathName": "A path",
+          }
+        }
+      >
+        <td
+          onClick={[Function]}
+        >
+          A name
+        </td>
+      </TCell>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Cell renders an empty cell if field is incorrect 1`] = `
+<table>
+  <tbody>
+    <tr>
+      <TCell
+        Field={
+          Object {
+            "Editable": true,
+            "Name": "Name Incorrect",
+            "Primary": false,
+            "Required": false,
+            "Type": "String",
+          }
+        }
+        Row={
+          Object {
+            "BuiltInCategory": "INVALID",
+            "ID": 1,
+            "Name": "A name",
+            "PathName": "A path",
+          }
+        }
+      >
+        <td>
+          -
+        </td>
+      </TCell>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Click over a cell non-editable - nothing 1`] = `
+<table>
+  <tbody>
+    <tr>
+      <TCell
+        Field={
+          Object {
+            "Editable": false,
+            "Name": "BuiltInCategory",
+            "Primary": false,
+            "Required": false,
+            "Type": "String",
+          }
+        }
+        Row={
+          Object {
+            "BuiltInCategory": "INVALID",
+            "ID": 1,
+            "Name": "A name",
+            "PathName": "A path",
+          }
+        }
+      >
+        <td
+          onClick={[Function]}
+        >
+          INVALID
+        </td>
+      </TCell>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Click over a primary cell - nothing 1`] = `
+<table>
+  <tbody>
+    <tr>
+      <TCell
+        Field={
+          Object {
+            "Editable": true,
+            "Name": "ID",
+            "Primary": true,
+            "Required": false,
+            "Type": "String",
+          }
+        }
+        Row={
+          Object {
+            "BuiltInCategory": "INVALID",
+            "ID": 1,
+            "Name": "A name",
+            "PathName": "A path",
+          }
+        }
+      >
+        <td
+          className="primary"
+          onClick={[Function]}
+        >
+          1
+        </td>
+      </TCell>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Click over cell renders an input 1`] = `
+<table>
+  <tbody>
+    <tr>
+      <TCell
+        Field={
+          Object {
+            "Editable": true,
+            "Name": "Name",
+            "Primary": false,
+            "Required": false,
+            "Type": "String",
+          }
+        }
+        Row={
+          Object {
+            "BuiltInCategory": "INVALID",
+            "ID": 1,
+            "Name": "A name",
+            "PathName": "A path",
+          }
+        }
+      >
+        <td
+          onClick={[Function]}
+        >
+          <Input
+            onBlur={[Function]}
+            onEnter={[Function]}
+            onEsc={[Function]}
+            value="A name"
+          >
+            <input
+              autoFocus={true}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onKeyUp={[Function]}
+              value="A name"
+            />
+          </Input>
+        </td>
+      </TCell>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Finish edit fires onEdit 1`] = `
+<table>
+  <tbody>
+    <tr>
+      <TCell
+        Field={
+          Object {
+            "Editable": true,
+            "Name": "BuiltInCategory",
+            "Primary": false,
+            "Required": false,
+            "Type": "String",
+          }
+        }
+        Row={
+          Object {
+            "BuiltInCategory": "INVALID",
+            "ID": 1,
+            "Name": "A name",
+            "PathName": "A path",
+          }
+        }
+        onEdit={[Function]}
+      >
+        <td
+          className="dirty"
+          onClick={[Function]}
+        >
+          modified value
+        </td>
+      </TCell>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Finish edit if Enter 1`] = `
+<table>
+  <tbody>
+    <tr>
+      <TCell
+        Field={
+          Object {
+            "Editable": true,
+            "Name": "BuiltInCategory",
+            "Primary": false,
+            "Required": false,
+            "Type": "String",
+          }
+        }
+        Row={
+          Object {
+            "BuiltInCategory": "INVALID",
+            "ID": 1,
+            "Name": "A name",
+            "PathName": "A path",
+          }
+        }
+      >
+        <td
+          className="dirty"
+          onClick={[Function]}
+        >
+          modified value
+        </td>
+      </TCell>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Finish edit if blur 1`] = `
+<table>
+  <tbody>
+    <tr>
+      <TCell
+        Field={
+          Object {
+            "Editable": true,
+            "Name": "BuiltInCategory",
+            "Primary": false,
+            "Required": false,
+            "Type": "String",
+          }
+        }
+        Row={
+          Object {
+            "BuiltInCategory": "INVALID",
+            "ID": 1,
+            "Name": "A name",
+            "PathName": "A path",
+          }
+        }
+      >
+        <td
+          className="dirty"
+          onClick={[Function]}
+        >
+          modified value
+        </td>
+      </TCell>
+    </tr>
+  </tbody>
+</table>
+`;

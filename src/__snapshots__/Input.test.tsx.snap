@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input changes its value 1`] = `
+<Input
+  value="value A"
+>
+  <input
+    autoFocus={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyUp={[Function]}
+    value="value B"
+  />
+</Input>
+`;
+
+exports[`Input normally 1`] = `
+<Input
+  value="value A"
+>
+  <input
+    autoFocus={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyUp={[Function]}
+    value="value A"
+  />
+</Input>
+`;

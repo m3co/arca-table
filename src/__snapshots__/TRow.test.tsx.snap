@@ -1,0 +1,566 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Click over delete fires the delete function 1`] = `
+<table>
+  <tbody>
+    <TRow
+      Info={
+        Object {
+          "Actions": Object {
+            "Delete": true,
+            "Insert": true,
+            "Update": true,
+          },
+          "Fields": Array [
+            Object {
+              "Combobox": null,
+              "Editable": false,
+              "Name": "ID",
+              "Primary": true,
+              "Required": false,
+              "Select": null,
+              "Type": "Number",
+            },
+            Object {
+              "Combobox": null,
+              "Editable": true,
+              "Name": "Name",
+              "Primary": false,
+              "Required": true,
+              "Select": null,
+              "Type": "String",
+            },
+            Object {
+              "Combobox": null,
+              "Editable": true,
+              "Name": "BuiltInCategory",
+              "Primary": false,
+              "Required": true,
+              "Select": null,
+              "Type": "String",
+            },
+            Object {
+              "Combobox": null,
+              "Editable": true,
+              "Name": "PathName",
+              "Primary": false,
+              "Required": true,
+              "Select": null,
+              "Type": "String",
+            },
+          ],
+        }
+      }
+      Row={
+        Object {
+          "BuiltInCategory": "INVALID",
+          "ID": 1,
+          "Name": "A name",
+          "PathName": "A path",
+        }
+      }
+      onRemove={[Function]}
+    >
+      <tr>
+        <TCell
+          Field={
+            Object {
+              "Combobox": null,
+              "Editable": false,
+              "Name": "ID",
+              "Primary": true,
+              "Required": false,
+              "Select": null,
+              "Type": "Number",
+            }
+          }
+          Row={
+            Object {
+              "BuiltInCategory": "INVALID",
+              "ID": 1,
+              "Name": "A name",
+              "PathName": "A path",
+            }
+          }
+          key="0"
+        >
+          <td
+            className="primary"
+            onClick={[Function]}
+          >
+            1
+          </td>
+        </TCell>
+        <TCell
+          Field={
+            Object {
+              "Combobox": null,
+              "Editable": true,
+              "Name": "Name",
+              "Primary": false,
+              "Required": true,
+              "Select": null,
+              "Type": "String",
+            }
+          }
+          Row={
+            Object {
+              "BuiltInCategory": "INVALID",
+              "ID": 1,
+              "Name": "A name",
+              "PathName": "A path",
+            }
+          }
+          key="1"
+        >
+          <td
+            onClick={[Function]}
+          >
+            A name
+          </td>
+        </TCell>
+        <TCell
+          Field={
+            Object {
+              "Combobox": null,
+              "Editable": true,
+              "Name": "BuiltInCategory",
+              "Primary": false,
+              "Required": true,
+              "Select": null,
+              "Type": "String",
+            }
+          }
+          Row={
+            Object {
+              "BuiltInCategory": "INVALID",
+              "ID": 1,
+              "Name": "A name",
+              "PathName": "A path",
+            }
+          }
+          key="2"
+        >
+          <td
+            onClick={[Function]}
+          >
+            INVALID
+          </td>
+        </TCell>
+        <TCell
+          Field={
+            Object {
+              "Combobox": null,
+              "Editable": true,
+              "Name": "PathName",
+              "Primary": false,
+              "Required": true,
+              "Select": null,
+              "Type": "String",
+            }
+          }
+          Row={
+            Object {
+              "BuiltInCategory": "INVALID",
+              "ID": 1,
+              "Name": "A name",
+              "PathName": "A path",
+            }
+          }
+          key="3"
+        >
+          <td
+            onClick={[Function]}
+          >
+            A path
+          </td>
+        </TCell>
+        <td>
+          <button
+            onClick={[Function]}
+          >
+            -
+          </button>
+        </td>
+      </tr>
+    </TRow>
+  </tbody>
+</table>
+`;
+
+exports[`Click over delete fires the delete function 2`] = `
+<table>
+  <tbody>
+    <TRow
+      Info={
+        Object {
+          "Actions": Object {
+            "Delete": true,
+            "Insert": true,
+            "Update": true,
+          },
+          "Fields": Array [
+            Object {
+              "Combobox": null,
+              "Editable": false,
+              "Name": "ID",
+              "Primary": true,
+              "Required": false,
+              "Select": null,
+              "Type": "Number",
+            },
+            Object {
+              "Combobox": null,
+              "Editable": true,
+              "Name": "Name",
+              "Primary": false,
+              "Required": true,
+              "Select": null,
+              "Type": "String",
+            },
+            Object {
+              "Combobox": null,
+              "Editable": true,
+              "Name": "BuiltInCategory",
+              "Primary": false,
+              "Required": true,
+              "Select": null,
+              "Type": "String",
+            },
+            Object {
+              "Combobox": null,
+              "Editable": true,
+              "Name": "PathName",
+              "Primary": false,
+              "Required": true,
+              "Select": null,
+              "Type": "String",
+            },
+          ],
+        }
+      }
+      Row={
+        Object {
+          "BuiltInCategory": "INVALID",
+          "ID": 1,
+          "Name": "A name",
+          "PathName": "A path",
+        }
+      }
+      onRemove={[Function]}
+    >
+      <tr
+        className="dirty"
+      >
+        <TCell
+          Field={
+            Object {
+              "Combobox": null,
+              "Editable": false,
+              "Name": "ID",
+              "Primary": true,
+              "Required": false,
+              "Select": null,
+              "Type": "Number",
+            }
+          }
+          Row={
+            Object {
+              "BuiltInCategory": "INVALID",
+              "ID": 1,
+              "Name": "A name",
+              "PathName": "A path",
+            }
+          }
+          key="0"
+        >
+          <td
+            className="primary"
+            onClick={[Function]}
+          >
+            1
+          </td>
+        </TCell>
+        <TCell
+          Field={
+            Object {
+              "Combobox": null,
+              "Editable": true,
+              "Name": "Name",
+              "Primary": false,
+              "Required": true,
+              "Select": null,
+              "Type": "String",
+            }
+          }
+          Row={
+            Object {
+              "BuiltInCategory": "INVALID",
+              "ID": 1,
+              "Name": "A name",
+              "PathName": "A path",
+            }
+          }
+          key="1"
+        >
+          <td
+            onClick={[Function]}
+          >
+            A name
+          </td>
+        </TCell>
+        <TCell
+          Field={
+            Object {
+              "Combobox": null,
+              "Editable": true,
+              "Name": "BuiltInCategory",
+              "Primary": false,
+              "Required": true,
+              "Select": null,
+              "Type": "String",
+            }
+          }
+          Row={
+            Object {
+              "BuiltInCategory": "INVALID",
+              "ID": 1,
+              "Name": "A name",
+              "PathName": "A path",
+            }
+          }
+          key="2"
+        >
+          <td
+            onClick={[Function]}
+          >
+            INVALID
+          </td>
+        </TCell>
+        <TCell
+          Field={
+            Object {
+              "Combobox": null,
+              "Editable": true,
+              "Name": "PathName",
+              "Primary": false,
+              "Required": true,
+              "Select": null,
+              "Type": "String",
+            }
+          }
+          Row={
+            Object {
+              "BuiltInCategory": "INVALID",
+              "ID": 1,
+              "Name": "A name",
+              "PathName": "A path",
+            }
+          }
+          key="3"
+        >
+          <td
+            onClick={[Function]}
+          >
+            A path
+          </td>
+        </TCell>
+        <td>
+          <button
+            onClick={[Function]}
+          >
+            -
+          </button>
+        </td>
+      </tr>
+    </TRow>
+  </tbody>
+</table>
+`;
+
+exports[`Row renders a normal cell 1`] = `
+<table>
+  <tbody>
+    <TRow
+      Info={
+        Object {
+          "Actions": Object {
+            "Delete": true,
+            "Insert": true,
+            "Update": true,
+          },
+          "Fields": Array [
+            Object {
+              "Combobox": null,
+              "Editable": false,
+              "Name": "ID",
+              "Primary": true,
+              "Required": false,
+              "Select": null,
+              "Type": "Number",
+            },
+            Object {
+              "Combobox": null,
+              "Editable": true,
+              "Name": "Name",
+              "Primary": false,
+              "Required": true,
+              "Select": null,
+              "Type": "String",
+            },
+            Object {
+              "Combobox": null,
+              "Editable": true,
+              "Name": "BuiltInCategory",
+              "Primary": false,
+              "Required": true,
+              "Select": null,
+              "Type": "String",
+            },
+            Object {
+              "Combobox": null,
+              "Editable": true,
+              "Name": "PathName",
+              "Primary": false,
+              "Required": true,
+              "Select": null,
+              "Type": "String",
+            },
+          ],
+        }
+      }
+      Row={
+        Object {
+          "BuiltInCategory": "INVALID",
+          "ID": 1,
+          "Name": "A name",
+          "PathName": "A path",
+        }
+      }
+    >
+      <tr>
+        <TCell
+          Field={
+            Object {
+              "Combobox": null,
+              "Editable": false,
+              "Name": "ID",
+              "Primary": true,
+              "Required": false,
+              "Select": null,
+              "Type": "Number",
+            }
+          }
+          Row={
+            Object {
+              "BuiltInCategory": "INVALID",
+              "ID": 1,
+              "Name": "A name",
+              "PathName": "A path",
+            }
+          }
+          key="0"
+        >
+          <td
+            className="primary"
+            onClick={[Function]}
+          >
+            1
+          </td>
+        </TCell>
+        <TCell
+          Field={
+            Object {
+              "Combobox": null,
+              "Editable": true,
+              "Name": "Name",
+              "Primary": false,
+              "Required": true,
+              "Select": null,
+              "Type": "String",
+            }
+          }
+          Row={
+            Object {
+              "BuiltInCategory": "INVALID",
+              "ID": 1,
+              "Name": "A name",
+              "PathName": "A path",
+            }
+          }
+          key="1"
+        >
+          <td
+            onClick={[Function]}
+          >
+            A name
+          </td>
+        </TCell>
+        <TCell
+          Field={
+            Object {
+              "Combobox": null,
+              "Editable": true,
+              "Name": "BuiltInCategory",
+              "Primary": false,
+              "Required": true,
+              "Select": null,
+              "Type": "String",
+            }
+          }
+          Row={
+            Object {
+              "BuiltInCategory": "INVALID",
+              "ID": 1,
+              "Name": "A name",
+              "PathName": "A path",
+            }
+          }
+          key="2"
+        >
+          <td
+            onClick={[Function]}
+          >
+            INVALID
+          </td>
+        </TCell>
+        <TCell
+          Field={
+            Object {
+              "Combobox": null,
+              "Editable": true,
+              "Name": "PathName",
+              "Primary": false,
+              "Required": true,
+              "Select": null,
+              "Type": "String",
+            }
+          }
+          Row={
+            Object {
+              "BuiltInCategory": "INVALID",
+              "ID": 1,
+              "Name": "A name",
+              "PathName": "A path",
+            }
+          }
+          key="3"
+        >
+          <td
+            onClick={[Function]}
+          >
+            A path
+          </td>
+        </TCell>
+        <td>
+          <button
+            onClick={[Function]}
+          >
+            -
+          </button>
+        </td>
+      </tr>
+    </TRow>
+  </tbody>
+</table>
+`;
