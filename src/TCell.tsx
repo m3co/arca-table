@@ -36,7 +36,8 @@ export class TCell
       column === Field.Name
     );
     if (column) {
-      this.state.value = Row[column] ? Row[column].toString() : '';
+      const value = Row[column];
+      this.state.value = value ? value.toString() : '';
       this.state.column = column;
     }
   }
@@ -44,11 +45,11 @@ export class TCell
   public componentDidUpdate(prevProps: Props): void {
     const { props, state } = this;
     if (state.column && prevProps.Row !== props.Row) {
-      const value = props.Row[state.column].toString();
+      const value = props.Row[state.column];
       this.setState((state: State): State => {
         return {
           ...state,
-          value,
+          value: value ? value.toString() : '',
           dirty: false
         };
       });

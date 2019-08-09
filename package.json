@@ -1,6 +1,6 @@
 {
   "name": "arca-table",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Dibuje lo que sea pero que sea una tabla",
   "main": "build/index.js",
   "types": "build/index.d.ts",
