@@ -3,7 +3,9 @@ import * as React from 'react';
 
 import { TRow } from './TRow';
 
-import { Field, Row, Info } from 'arca-redux'
+import { Field, Row, Info } from 'arca-redux';
+
+import { SearchSocket } from './Search-socket';
 
 interface Props {
   newRow?: Row;
@@ -18,6 +20,17 @@ interface Props {
 export class TBody
   extends React.Component<Props>
 {
+  private socket?: SearchSocket;
+  public constructor(props: Props) {
+    super(props);
+
+    let shouldOpenSocket = !!props.Info.Fields
+      .find((field): boolean => !!field.Combobox);
+    if (shouldOpenSocket) {
+      this.socket = new SearchSocket();
+    }
+  }
+
   public render(): JSX.Element {
     const { Info, Rows, newRow,
       onUpdate, onInsert, onDelete, onDeleteNewRow } = this.props;
@@ -31,7 +44,8 @@ export class TBody
             Row={newRow}
             onEdit={onInsert}
             onRemove={onDeleteNewRow}
-            dirty={true} />
+            dirty={true}
+            socket={this.socket} />
         }
         {
           Rows.map((Row, key): JSX.Element => {
@@ -40,7 +54,8 @@ export class TBody
               Info={Info}
               Row={Row}
               onEdit={onUpdate}
-              onRemove={onDelete} />);
+              onRemove={onDelete}
+              socket={this.socket} />);
           })
         }
       </tbody>

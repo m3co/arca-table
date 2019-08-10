@@ -5,7 +5,7 @@ import { mount } from 'enzyme';
 import { TRow } from './TRow';
 import { FACADSchedules, Info, Field, Row } from 'arca-redux';
 
-type MockHanders = {
+interface MockHanders {
   onEdit?: (Row: Row, column?: keyof Row, Field?: Field) => void;
   onDelete?: (Row: Row) => void;
 }
@@ -37,7 +37,7 @@ test('Row renders a normal cell', (): void => {
 
 test('Click over delete fires the delete function', (): void => {
   let onDeleteReached = false;
-  const onDelete = (row: Row): void => {
+  const onDelete = (): void => {
     onDeleteReached = true;
   }
   const el = prepareMock1({ onDelete });

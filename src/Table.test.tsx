@@ -3,7 +3,7 @@ import * as React from 'react';
 import { mount } from 'enzyme';
 
 import Socket from 'socket.io-client';
-import { ARCASocket, reducer, Row, FACADSchedules } from 'arca-redux';
+import { ARCASocket, reducer, FACADSchedules } from 'arca-redux';
 import { createStore } from 'redux';
 
 import { Table } from './Table';
@@ -54,7 +54,7 @@ test('Table FACAD-Schedules redacts one entry', (done): void => {
             state.Source[Source].Rows.length > 0) {
 
       let onUpdateReached = false;
-      const onUpdate = (Row: Row): void => {
+      const onUpdate = (): void => {
         onUpdateReached = true;
       }
 
@@ -92,7 +92,7 @@ test('Table FACAD-Schedules renders a new Row', (done): void => {
   };
 
   let onInsertReached = false;
-  const onInsert = (Row: Row): string => {
+  const onInsert = (): string => {
     onInsertReached = true;
     return 'uuid4';
   }

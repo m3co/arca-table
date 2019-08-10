@@ -2,7 +2,9 @@ import * as React from 'react';
 
 import { TCell } from './TCell';
 
-import { Field, Row, Info } from 'arca-redux'
+import { Field, Row, Info } from 'arca-redux';
+
+import { SearchSocket } from './Search-socket';
 
 import './TRow.less';
 
@@ -12,6 +14,7 @@ interface Props {
   onEdit?: (Row: Row, column?: keyof Row, Field?: Field) => void;
   onRemove?: (Row: Row) => void;
   dirty?: boolean;
+  socket?: SearchSocket;
 }
 
 interface State {
@@ -63,14 +66,19 @@ export class TRow
   }
 
   public render(): JSX.Element {
-    const { Info, Row, onEdit } = this.props;
+    const { Info, Row, onEdit, socket: search } = this.props;
     const { dirty } = this.state;
     const className = dirty ? 'dirty' : undefined;
     return (
       <tr className={className}>
         {
           Info.Fields.map((field, key): JSX.Element =>
-            <TCell key={key} Row={Row} Field={field} onEdit={onEdit} />
+            <TCell
+              key={key}
+              Row={Row}
+              Field={field}
+              onEdit={onEdit}
+              socket={search} />
           )
         }
         <td>

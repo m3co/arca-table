@@ -16,7 +16,7 @@ interface Props {
 }
 
 interface State {
-  newRow?: Row
+  newRow?: Row;
   insertID?: string;
 }
 

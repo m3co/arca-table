@@ -1,14 +1,18 @@
 import * as React from 'react';
 
 import { Input } from './Input';
+import { Search } from './Search';
 
 import { Row, Field } from 'arca-redux';
+import { SearchSocket } from './Search-socket';
+
 import './TCell.less';
 
 interface Props {
   Field: Field;
   Row: Row;
   onEdit?: (Row: Row, column?: keyof Row, Field?: Field) => void;
+  socket?: SearchSocket;
 }
 
 interface State {
@@ -76,7 +80,7 @@ export class TCell
     });
   }
 
-  private finishEdit = (column: keyof Row) => (currentValue: string): void => {
+  private finishEdit = (column: keyof Row): (currentValue: string) => void => (currentValue: string): void => {
     this.setState((state: State): State => {
       if (this.props.onEdit) {
         const { Field, Row } = this.props;
@@ -96,7 +100,8 @@ export class TCell
   }
 
   public render(): JSX.Element {
-    const { Field, Row } = this.props;
+    const { Field, Row, socket: search } = this.props;
+    const { Combobox } = Field;
     const { value, column, dirty } = this.state;
     const className = `${Field.Primary ? 'primary' : ''} ${dirty ? 'dirty' : ''}`.trim();
     return (column) ?
@@ -105,12 +110,23 @@ export class TCell
           className={className ? className : undefined}
           onClick={this.startEdit}>
           {(this.state.edit) ? (
-            <Input
-              value={value.toString()}
-              onBlur={this.finishEdit(column)}
-              onEnter={this.finishEdit(column)}
-              onEsc={this.cancelEdit}
-            />
+            (search && Combobox) ? (
+              <Search
+                socket={search}
+                Row={Row}
+                Setup={Combobox}
+                value={value.toString()}
+                onBlur={this.finishEdit(column)}
+                onEnter={this.finishEdit(column)}
+                onEsc={this.cancelEdit} />
+            ) : (
+              <Input
+                value={value.toString()}
+                onBlur={this.finishEdit(column)}
+                onEnter={this.finishEdit(column)}
+                onEsc={this.cancelEdit}
+              />
+            )
           ) : (dirty) ? value : Row[column]}
         </td>
       ) :

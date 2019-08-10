@@ -5,7 +5,7 @@ import { mount } from 'enzyme';
 import { TCell } from './TCell';
 import { FACADSchedules, Field, Row } from 'arca-redux';
 
-type MockHanders = {
+interface MockHanders {
   onEdit?: (Row: Row, column?: keyof Row, Field?: Field) => void;
 }
 
