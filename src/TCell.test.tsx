@@ -3,10 +3,10 @@ import * as React from 'react';
 import { mount } from 'enzyme';
 
 import { TCell } from './TCell';
-import { FACADSchedules, Field, Row } from 'arca-redux';
+import { FACADSchedules, Field, Fields, Row } from 'arca-redux';
 
 interface MockHanders {
-  onEdit?: (Row: Row, column?: keyof Row, Field?: Field) => void;
+  onEdit?: (Row: Row, column?: keyof Fields, Field?: Field) => void;
 }
 
 function prepareMock1(overloadField?: Field, overloadedHandlers?: MockHanders): JSX.Element {
@@ -167,9 +167,10 @@ test('Finish edit fires onEdit', (): void => {
 
   let onEditReached = false;
   const handlers: MockHanders = {
-    onEdit: (Row: Row, column?: keyof Row, Field?: Field): void => {
+    onEdit: (Row: Row, column?: keyof Fields, Field?: Field): void => {
+      const row = Row as Fields;
       if (column) {
-        expect(Row[column]).toBe(newValue);
+        expect(row[column]).toBe(newValue);
       } else {
         fail();
       }

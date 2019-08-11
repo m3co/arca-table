@@ -3,10 +3,10 @@ import * as React from 'react';
 import { mount } from 'enzyme';
 
 import { TRow } from './TRow';
-import { FACADSchedules, Info, Field, Row } from 'arca-redux';
+import { FACADSchedules, Info, Field, Row, Fields } from 'arca-redux';
 
 interface MockHanders {
-  onEdit?: (Row: Row, column?: keyof Row, Field?: Field) => void;
+  onEdit?: (Row: Row, column?: keyof Fields, Field?: Field) => void;
   onDelete?: (Row: Row) => void;
 }
 

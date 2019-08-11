@@ -2,19 +2,17 @@ import * as React from 'react';
 
 import { TCell } from './TCell';
 
-import { Field, Row, Info } from 'arca-redux';
-
-import { SearchSocket } from './Search-socket';
+import { Field, Row, Fields, Info, ARCASearchSocket } from 'arca-redux';
 
 import './TRow.less';
 
 interface Props {
   Info: Info;
   Row: Row;
-  onEdit?: (Row: Row, column?: keyof Row, Field?: Field) => void;
+  onEdit?: (Row: Row, column?: keyof Fields, Field?: Field) => void;
   onRemove?: (Row: Row) => void;
   dirty?: boolean;
-  socket?: SearchSocket;
+  socket?: ARCASearchSocket;
 }
 
 interface State {
@@ -26,10 +24,15 @@ function getPK(Row: Row, Info: Info): string {
   const PKs: string[] = Info.Fields
     .filter((field): boolean => field.Primary)
     .map((field: Field): string => field.Name);
-  const columns = Object.keys(Row) as (keyof typeof Row)[];
+  const columns = Object.keys(Row) as (keyof Fields)[];
   return PKs.map((pk: string): string => {
     const column = columns.find((column): boolean => column === pk);
-    return column ? Row[column].toString() : '';
+    if (column) {
+      const row = Row as Fields;
+      const value = row[column];
+      return value ? value.toString() : '';
+    }
+    return '';
   }).join();
 }
 

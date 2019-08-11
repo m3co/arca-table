@@ -3,15 +3,15 @@ import * as React from 'react';
 import { THead } from './THead';
 import { TBody } from './TBody';
 
-import { Field, Row, Info } from 'arca-redux'
+import { Field, Fields, Row, Info } from 'arca-redux'
 
 interface Props {
   Info?: Info;
   Rows: Row[];
   Requests?: string[];
-  onInsert?: (Row: Row, column?: keyof Row, Field?: Field) => string;
+  onInsert?: (Row: Row, column?: keyof Fields, Field?: Field) => string;
   onDelete?: (Row: Row) => void;
-  onUpdate?: (Row: Row, column?: keyof Row, Field?: Field) => void;
+  onUpdate?: (Row: Row, column?: keyof Fields, Field?: Field) => void;
   provideEmptyRow?: () => Row;
 }
 
@@ -44,7 +44,7 @@ export class Table
     });
   }
 
-  private insert = (Row: Row, column?: keyof Row, Field?: Field): void => {
+  private insert = (Row: Row, column?: keyof Fields, Field?: Field): void => {
     const { onInsert } = this.props;
     if (onInsert) {
       this.setState((state: State): State => {

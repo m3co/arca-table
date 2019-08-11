@@ -3,23 +3,22 @@ import * as React from 'react';
 import { Input } from './Input';
 import { Search } from './Search';
 
-import { Row, Field } from 'arca-redux';
-import { SearchSocket } from './Search-socket';
+import { Row, Field, Fields, ARCASearchSocket } from 'arca-redux/';
 
 import './TCell.less';
 
 interface Props {
   Field: Field;
   Row: Row;
-  onEdit?: (Row: Row, column?: keyof Row, Field?: Field) => void;
-  socket?: SearchSocket;
+  onEdit?: (Row: Row, column?: keyof Fields, Field?: Field) => void;
+  socket?: ARCASearchSocket;
 }
 
 interface State {
   edit: boolean;
   dirty: boolean;
   value: string;
-  column?: keyof Row;
+  column?: keyof Fields;
 }
 
 export class TCell
@@ -35,12 +34,13 @@ export class TCell
     super(props);
 
     const { Field, Row } = this.props;
-    const columns = Object.keys(Row) as (keyof typeof Row)[];
+    const columns = Object.keys(Row) as (keyof Fields)[];
     const column = columns.find((column): boolean =>
       column === Field.Name
     );
     if (column) {
-      const value = Row[column];
+      const row = Row as Fields;
+      const value = row[column];
       this.state.value = value ? value.toString() : '';
       this.state.column = column;
     }
@@ -49,7 +49,8 @@ export class TCell
   public componentDidUpdate(prevProps: Props): void {
     const { props, state } = this;
     if (state.column && prevProps.Row !== props.Row) {
-      const value = props.Row[state.column];
+      const row = props.Row as Fields;
+      const value = row[state.column];
       this.setState((state: State): State => {
         return {
           ...state,
@@ -80,7 +81,7 @@ export class TCell
     });
   }
 
-  private finishEdit = (column: keyof Row): (currentValue: string) => void => (currentValue: string): void => {
+  private finishEdit = (column: keyof Fields): (currentValue: string) => void => (currentValue: string): void => {
     this.setState((state: State): State => {
       if (this.props.onEdit) {
         const { Field, Row } = this.props;
@@ -101,6 +102,7 @@ export class TCell
 
   public render(): JSX.Element {
     const { Field, Row, socket: search } = this.props;
+    const row = Row as Fields;
     const { Combobox } = Field;
     const { value, column, dirty } = this.state;
     const className = `${Field.Primary ? 'primary' : ''} ${dirty ? 'dirty' : ''}`.trim();
@@ -127,7 +129,7 @@ export class TCell
                 onEsc={this.cancelEdit}
               />
             )
-          ) : (dirty) ? value : Row[column]}
+          ) : (dirty) ? value : row[column]}
         </td>
       ) :
       (<td>-</td>);

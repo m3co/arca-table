@@ -1,13 +1,12 @@
 import * as React from 'react';
-import { Combobox, Row } from 'arca-redux';
-import { SearchSocket, Params } from './Search-socket';
+import { Combobox, Row, ARCASearchSocket, Params } from 'arca-redux';
 import { v4 as uuid4 } from 'uuid';
 
 interface Props {
   Row: Row;
   Setup: Combobox;
   value: string;
-  socket: SearchSocket;
+  socket: ARCASearchSocket;
   onBlur?: (currentValue: string) => void;
   onEnter?: (currentValue: string) => void;
   onEsc?: () => void;
