@@ -1,12 +1,13 @@
 import * as React from 'react';
-import { Combobox, Row, ARCASearchSocket, Params } from 'arca-redux';
+import { Combobox, Row, SearchMethod, Params } from 'arca-redux';
 import { v4 as uuid4 } from 'uuid';
 
 interface Props {
   Row: Row;
   Setup: Combobox;
+  list?: string;
   value: string;
-  socket: ARCASearchSocket;
+  search: SearchMethod;
   onBlur?: (currentValue: string) => void;
   onEnter?: (currentValue: string) => void;
   onEsc?: () => void;
@@ -25,6 +26,9 @@ interface State {
 export class Search
   extends React.Component<Props, State>
 {
+  static defaultProps = {
+    list: uuid4(),
+  }
 
   public state: State = {
     Rows: [],
@@ -41,9 +45,8 @@ export class Search
     }, {});
 
   private search(params: Params): void {
-    const { Setup, socket: search } = this.props;
-    search
-      .Search(Setup.Source, Setup.Value, params)
+    const { Setup, search } = this.props;
+    search(Setup.Source, Setup.Value, params)
       .then((response): void => {
         const Rows = response.Result
           .map((result): RowOption => ({
@@ -98,18 +101,17 @@ export class Search
   }
 
   public render(): JSX.Element {
-    const { state } = this;
-    const uuid = uuid4();
+    const { state, props: { list } } = this;
     return (
       <React.Fragment>
         <input
-          list={uuid}
+          list={list}
           autoFocus={true}
           onChange={this.onChange}
           onKeyUp={this.onKeyUp}
           onBlur={this.onBlur}
           value={state.value} />
-        <datalist id={uuid}>
+        <datalist id={list}>
           {
             state.Rows.map((row, key): JSX.Element =>
               <option

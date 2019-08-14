@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search changes its value 1`] = `
+<Search
+  Row={
+    Object {
+      "BuiltInCategory": "INVALID",
+    }
+  }
+  Setup={
+    Object {
+      "Display": "BuiltInCategory",
+      "Params": Object {
+        "BuiltInCategory": "BuiltInCategory",
+      },
+      "Source": "FACAD-BuiltInCategories",
+      "Value": "BuiltInCategory",
+    }
+  }
+  list="475e016e-6423-4462-bd91-0535a7e384fc"
+  search={[Function]}
+  value="INVALID"
+>
+  <input
+    autoFocus={true}
+    list="475e016e-6423-4462-bd91-0535a7e384fc"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyUp={[Function]}
+    value="ANOTHER"
+  />
+  <datalist
+    id="475e016e-6423-4462-bd91-0535a7e384fc"
+  />
+</Search>
+`;
+
+exports[`Search normally renders 1`] = `
+Object {
+  "Context": Object {
+    "Field": "BuiltInCategory",
+    "Source": "FACAD-BuiltInCategories",
+  },
+  "Error": null,
+  "ID": "5832c751-a6a9-4cd2-9235-157d90cb95d3",
+  "Method": "Search",
+  "Result": Array [
+    Object {
+      "BuiltInCategory": "OST_InternalLineLoads",
+    },
+    Object {
+      "BuiltInCategory": "OST_InternalLineLoadTags",
+    },
+    Object {
+      "BuiltInCategory": "OST_LineLoads",
+    },
+    Object {
+      "BuiltInCategory": "OST_LineLoadTags",
+    },
+  ],
+}
+`;
+
+exports[`Search normally renders 2`] = `
+<Search
+  Row={
+    Object {
+      "BuiltInCategory": "INVALID",
+    }
+  }
+  Setup={
+    Object {
+      "Display": "BuiltInCategory",
+      "Params": Object {
+        "BuiltInCategory": "BuiltInCategory",
+      },
+      "Source": "FACAD-BuiltInCategories",
+      "Value": "BuiltInCategory",
+    }
+  }
+  list="475e016e-6423-4462-bd91-0535a7e384fc"
+  search={[Function]}
+  value="INVALID"
+>
+  <input
+    autoFocus={true}
+    list="475e016e-6423-4462-bd91-0535a7e384fc"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyUp={[Function]}
+    value="INVALID"
+  />
+  <datalist
+    id="475e016e-6423-4462-bd91-0535a7e384fc"
+  >
+    <option
+      key="0"
+      label="OST_InternalLineLoads"
+      value="OST_InternalLineLoads"
+    />
+    <option
+      key="1"
+      label="OST_InternalLineLoadTags"
+      value="OST_InternalLineLoadTags"
+    />
+    <option
+      key="2"
+      label="OST_LineLoads"
+      value="OST_LineLoads"
+    />
+    <option
+      key="3"
+      label="OST_LineLoadTags"
+      value="OST_LineLoadTags"
+    />
+  </datalist>
+</Search>
+`;

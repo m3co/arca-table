@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Input } from './Input';
 import { Search } from './Search';
 
-import { Row, Field, Fields, ARCASearchSocket } from 'arca-redux/';
+import { Row, Field, Fields, createSearchSocket, SearchMethod } from 'arca-redux/';
 
 import './TCell.less';
 
@@ -11,7 +11,7 @@ interface Props {
   Field: Field;
   Row: Row;
   onEdit?: (Row: Row, column?: keyof Fields, Field?: Field) => void;
-  socket?: ARCASearchSocket;
+  search?: SearchMethod;
 }
 
 interface State {
@@ -101,7 +101,7 @@ export class TCell
   }
 
   public render(): JSX.Element {
-    const { Field, Row, socket: search } = this.props;
+    const { Field, Row, search } = this.props;
     const row = Row as Fields;
     const { Combobox } = Field;
     const { value, column, dirty } = this.state;
@@ -114,7 +114,7 @@ export class TCell
           {(this.state.edit) ? (
             (search && Combobox) ? (
               <Search
-                socket={search}
+                search={search}
                 Row={Row}
                 Setup={Combobox}
                 value={value.toString()}
