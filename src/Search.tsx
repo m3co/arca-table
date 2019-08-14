@@ -26,7 +26,7 @@ interface State {
 export class Search
   extends React.Component<Props, State>
 {
-  static defaultProps = {
+  public static defaultProps = {
     list: uuid4(),
   }
 

@@ -21,15 +21,15 @@ interface Response {
 
 const URL = 'http://localhost:8086';
 
-interface mockFns {
+interface MockFns {
   onBlur?: (currentValue: string) => void;
   onEnter?: (currentValue: string) => void;
   onEsc?: () => void;
 }
 
 function prepareMock2(searchMock: (Source: keyof State["Source"],
-Field: keyof Fields,
-Params: Params) => Promise<Response>, fns?: mockFns) {
+  Field: keyof Fields,
+  Params: Params) => Promise<Response>, fns?: MockFns): JSX.Element {
 
   const combobox: Combobox = {
     Source: "FACAD-BuiltInCategories",
@@ -62,27 +62,32 @@ Params: Params) => Promise<Response>, fns?: mockFns) {
 test('Search normally renders', (done): void => {
   const io = Socket(URL);
   const search = createSearchSocket(io);
+  let transition: Promise<Response>;
   const searchMock = (Source: keyof State["Source"],
     Field: keyof Fields,
     Params: Params): Promise<Response> => {
     const r = search(Source, Field, Params, '5832c751-a6a9-4cd2-9235-157d90cb95d3');
-    r.then((response: Response): void => {
-      setTimeout(() => {
+    transition = r;
+    return r;
+  };
+
+  const el = prepareMock2(searchMock);
+  const wrapper = mount(el);
+  setTimeout((): void => {
+    transition.then((response: Response): void => {
+      setTimeout((): void => {
         wrapper.update();
         expect(response).toMatchSnapshot();
         expect(wrapper).toMatchSnapshot();
         done();
       });
     });
-    return r;
-  };
-
-  const el = prepareMock2(searchMock);
-  const wrapper = mount(el);
+  })
 });
+
 const searchMock = (Source: keyof State["Source"],
-Field: keyof Fields,
-Params: Params): Promise<Response> => {
+  Field: keyof Fields,
+  Params: Params): Promise<Response> => {
   const response: Response = {
     ID: '',
     Method: "Search",

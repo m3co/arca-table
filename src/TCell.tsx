@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Input } from './Input';
 import { Search } from './Search';
 
-import { Row, Field, Fields, createSearchSocket, SearchMethod } from 'arca-redux/';
+import { Row, Field, Fields, SearchMethod } from 'arca-redux/';
 
 import './TCell.less';
 

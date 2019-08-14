@@ -3,11 +3,39 @@ import * as React from 'react';
 import { mount } from 'enzyme';
 
 import { TCell } from './TCell';
-import { FACADSchedules, Field, Fields, Row } from 'arca-redux';
+import { State, Params, FACADSchedules, Field, Fields, Row } from 'arca-redux';
+
+interface Response {
+  ID: string;
+  Method: "Search";
+  Context: {
+    Field: keyof Fields;
+    Source: keyof State["Source"];
+  };
+  Result: Params[];
+  Error: {} | null;
+};
+
+const searchMock = (Source: keyof State["Source"],
+  Field: keyof Fields,
+  Params: Params): Promise<Response> => {
+  const response: Response = {
+    ID: '',
+    Method: "Search",
+    Context: {
+      Field,
+      Source,
+    },
+    Result: [{BuiltInCategory:"OST_InternalLineLoads"},{BuiltInCategory:"OST_InternalLineLoadTags"},{BuiltInCategory:"OST_LineLoads"},{BuiltInCategory:"OST_LineLoadTags"}],
+    Error: null,
+  };
+  return Promise.resolve(response);
+};
 
 interface MockHanders {
   onEdit?: (Row: Row, column?: keyof Fields, Field?: Field) => void;
-}
+  search?: typeof searchMock;
+};
 
 function prepareMock1(overloadField?: Field, overloadedHandlers?: MockHanders): JSX.Element {
   const row: FACADSchedules["Row"] = {
@@ -15,7 +43,7 @@ function prepareMock1(overloadField?: Field, overloadedHandlers?: MockHanders): 
     BuiltInCategory: 'INVALID',
     Name: 'A name',
     PathName: 'A path',
-  }
+  };
 
   const field: Field = overloadField || {
     Editable: true,
@@ -23,15 +51,14 @@ function prepareMock1(overloadField?: Field, overloadedHandlers?: MockHanders): 
     Name: 'Name',
     Type: 'String',
     Required: false,
-  }
+  };
 
-  const handlers: MockHanders = overloadedHandlers || {}
-
+  const handlers: MockHanders = overloadedHandlers || {};
   return (
     <table>
       <tbody>
         <tr>
-          <TCell Row={row} Field={field} onEdit={handlers.onEdit} />
+          <TCell Row={row} Field={field} onEdit={handlers.onEdit} search={handlers.search} />
         </tr>
       </tbody>
     </table>
@@ -42,6 +69,28 @@ test('Cell renders a normal cell', (): void => {
   const el = prepareMock1();
   const wrapper = mount(el);
   expect(wrapper).toMatchSnapshot();
+});
+
+test('Cell renders a combobox cell', (): void => {
+  const field: Field = {
+    Name:"BuiltInCategory",
+    Type:"String",
+    Primary:false,
+    Required:true,
+    Editable:true,
+    Combobox:{
+      Source:"FACAD-BuiltInCategories",
+      Display:"BuiltInCategory",
+      Value:"BuiltInCategory",
+      Params:{
+        BuiltInCategory:"BuiltInCategory"
+      }
+    }
+  };
+  const el = prepareMock1(field, { search: searchMock });
+  const wrapper = mount(el);
+  wrapper.find('TCell').simulate('click');
+  expect(wrapper.find('TCell Search datalist').length).toBe(1);
 });
 
 test('Cell renders an empty cell if field is incorrect', (): void => {
