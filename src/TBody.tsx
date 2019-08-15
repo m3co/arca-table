@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { TRow } from './TRow';
 
-import { Field, Row, Fields, Info, ARCASearchSocket } from 'arca-redux';
+import { Field, Row, Fields, Info, createSearchSocket, SearchMethod } from 'arca-redux';
 
 interface Props {
   newRow?: Row;
@@ -18,14 +18,14 @@ interface Props {
 export class TBody
   extends React.Component<Props>
 {
-  private socket?: ARCASearchSocket;
+  private search?: SearchMethod;
   public constructor(props: Props) {
     super(props);
 
     let shouldOpenSocket = !!props.Info.Fields
       .find((field): boolean => !!field.Combobox);
     if (shouldOpenSocket) {
-      this.socket = new ARCASearchSocket();
+      this.search = createSearchSocket();
     }
   }
 
@@ -43,7 +43,7 @@ export class TBody
             onEdit={onInsert}
             onRemove={onDeleteNewRow}
             dirty={true}
-            socket={this.socket} />
+            search={this.search} />
         }
         {
           Rows.map((Row, key): JSX.Element => {
@@ -53,7 +53,7 @@ export class TBody
               Row={Row}
               onEdit={onUpdate}
               onRemove={onDelete}
-              socket={this.socket} />);
+              search={this.search} />);
           })
         }
       </tbody>

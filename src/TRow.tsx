@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { TCell } from './TCell';
 
-import { Field, Row, Fields, Info, ARCASearchSocket } from 'arca-redux';
+import { Field, Row, Fields, Info, SearchMethod } from 'arca-redux';
 
 import './TRow.less';
 
@@ -12,7 +12,7 @@ interface Props {
   onEdit?: (Row: Row, column?: keyof Fields, Field?: Field) => void;
   onRemove?: (Row: Row) => void;
   dirty?: boolean;
-  socket?: ARCASearchSocket;
+  search?: SearchMethod;
 }
 
 interface State {
@@ -69,7 +69,7 @@ export class TRow
   }
 
   public render(): JSX.Element {
-    const { Info, Row, onEdit, socket: search } = this.props;
+    const { Info, Row, onEdit, search } = this.props;
     const { dirty } = this.state;
     const className = dirty ? 'dirty' : undefined;
     return (
@@ -81,7 +81,7 @@ export class TRow
               Row={Row}
               Field={field}
               onEdit={onEdit}
-              socket={search} />
+              search={search} />
           )
         }
         <td>
