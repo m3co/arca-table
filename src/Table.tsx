@@ -47,10 +47,12 @@ export class Table
   private insert = (Row: Row, column?: keyof Fields, Field?: Field): void => {
     const { onInsert } = this.props;
     if (onInsert) {
+      const id = onInsert(Row, column, Field);
       this.setState((state: State): State => {
         return {
           ...state,
-          insertID: onInsert(Row, column, Field)
+          newRow: Row,
+          insertID: id === '' ? undefined : id,
         }
       });
     }
@@ -61,6 +63,10 @@ export class Table
       newRow: undefined,
       insertID: undefined,
     });
+  }
+
+  private onUpdateNewRow = (Row: Row, column?: keyof Fields, Field?: Field): void => {
+    this.props.onInsert && this.insert(Row, column, Field);
   }
 
   public render(): JSX.Element {
@@ -82,7 +88,7 @@ export class Table
           Info={Info}
           Rows={Rows}
           onUpdate={onUpdate}
-          onInsert={onInsert && this.insert}
+          onInsert={onInsert && this.onUpdateNewRow}
           onDelete={onDelete}
           newRow={newRow}
           onDeleteNewRow={this.onDeleteNewRow} />

@@ -3389,7 +3389,7 @@ exports[`Table FACAD-Schedules renders a new Row 3`] = `
       }
       newRow={
         Object {
-          "BuiltInCategory": "INVALID",
+          "BuiltInCategory": "new value",
           "ID": 0,
           "Name": "A name",
           "PathName": "Path Name",
@@ -3449,7 +3449,7 @@ exports[`Table FACAD-Schedules renders a new Row 3`] = `
           }
           Row={
             Object {
-              "BuiltInCategory": "INVALID",
+              "BuiltInCategory": "new value",
               "ID": 0,
               "Name": "A name",
               "PathName": "Path Name",
@@ -3477,7 +3477,7 @@ exports[`Table FACAD-Schedules renders a new Row 3`] = `
               }
               Row={
                 Object {
-                  "BuiltInCategory": "INVALID",
+                  "BuiltInCategory": "new value",
                   "ID": 0,
                   "Name": "A name",
                   "PathName": "Path Name",
@@ -3507,7 +3507,7 @@ exports[`Table FACAD-Schedules renders a new Row 3`] = `
               }
               Row={
                 Object {
-                  "BuiltInCategory": "INVALID",
+                  "BuiltInCategory": "new value",
                   "ID": 0,
                   "Name": "A name",
                   "PathName": "Path Name",
@@ -3536,7 +3536,7 @@ exports[`Table FACAD-Schedules renders a new Row 3`] = `
               }
               Row={
                 Object {
-                  "BuiltInCategory": "INVALID",
+                  "BuiltInCategory": "new value",
                   "ID": 0,
                   "Name": "A name",
                   "PathName": "Path Name",
@@ -3546,7 +3546,6 @@ exports[`Table FACAD-Schedules renders a new Row 3`] = `
               onEdit={[Function]}
             >
               <td
-                className="dirty"
                 onClick={[Function]}
               >
                 new value
@@ -3566,7 +3565,7 @@ exports[`Table FACAD-Schedules renders a new Row 3`] = `
               }
               Row={
                 Object {
-                  "BuiltInCategory": "INVALID",
+                  "BuiltInCategory": "new value",
                   "ID": 0,
                   "Name": "A name",
                   "PathName": "Path Name",
