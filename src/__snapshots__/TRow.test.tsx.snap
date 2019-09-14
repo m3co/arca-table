@@ -54,9 +54,13 @@ exports[`Click over delete fires the delete function 1`] = `
       Row={
         Object {
           "BuiltInCategory": "INVALID",
+          "Field1": "",
+          "Field2": "",
+          "Field3": "",
           "ID": 1,
           "Name": "A name",
           "PathName": "A path",
+          "ReportType": "Schedule",
         }
       }
       onRemove={[Function]}
@@ -77,9 +81,13 @@ exports[`Click over delete fires the delete function 1`] = `
           Row={
             Object {
               "BuiltInCategory": "INVALID",
+              "Field1": "",
+              "Field2": "",
+              "Field3": "",
               "ID": 1,
               "Name": "A name",
               "PathName": "A path",
+              "ReportType": "Schedule",
             }
           }
           key="0"
@@ -106,9 +114,13 @@ exports[`Click over delete fires the delete function 1`] = `
           Row={
             Object {
               "BuiltInCategory": "INVALID",
+              "Field1": "",
+              "Field2": "",
+              "Field3": "",
               "ID": 1,
               "Name": "A name",
               "PathName": "A path",
+              "ReportType": "Schedule",
             }
           }
           key="1"
@@ -134,9 +146,13 @@ exports[`Click over delete fires the delete function 1`] = `
           Row={
             Object {
               "BuiltInCategory": "INVALID",
+              "Field1": "",
+              "Field2": "",
+              "Field3": "",
               "ID": 1,
               "Name": "A name",
               "PathName": "A path",
+              "ReportType": "Schedule",
             }
           }
           key="2"
@@ -162,9 +178,13 @@ exports[`Click over delete fires the delete function 1`] = `
           Row={
             Object {
               "BuiltInCategory": "INVALID",
+              "Field1": "",
+              "Field2": "",
+              "Field3": "",
               "ID": 1,
               "Name": "A name",
               "PathName": "A path",
+              "ReportType": "Schedule",
             }
           }
           key="3"
@@ -242,9 +262,13 @@ exports[`Click over delete fires the delete function 2`] = `
       Row={
         Object {
           "BuiltInCategory": "INVALID",
+          "Field1": "",
+          "Field2": "",
+          "Field3": "",
           "ID": 1,
           "Name": "A name",
           "PathName": "A path",
+          "ReportType": "Schedule",
         }
       }
       onRemove={[Function]}
@@ -267,9 +291,13 @@ exports[`Click over delete fires the delete function 2`] = `
           Row={
             Object {
               "BuiltInCategory": "INVALID",
+              "Field1": "",
+              "Field2": "",
+              "Field3": "",
               "ID": 1,
               "Name": "A name",
               "PathName": "A path",
+              "ReportType": "Schedule",
             }
           }
           key="0"
@@ -296,9 +324,13 @@ exports[`Click over delete fires the delete function 2`] = `
           Row={
             Object {
               "BuiltInCategory": "INVALID",
+              "Field1": "",
+              "Field2": "",
+              "Field3": "",
               "ID": 1,
               "Name": "A name",
               "PathName": "A path",
+              "ReportType": "Schedule",
             }
           }
           key="1"
@@ -324,9 +356,13 @@ exports[`Click over delete fires the delete function 2`] = `
           Row={
             Object {
               "BuiltInCategory": "INVALID",
+              "Field1": "",
+              "Field2": "",
+              "Field3": "",
               "ID": 1,
               "Name": "A name",
               "PathName": "A path",
+              "ReportType": "Schedule",
             }
           }
           key="2"
@@ -352,9 +388,13 @@ exports[`Click over delete fires the delete function 2`] = `
           Row={
             Object {
               "BuiltInCategory": "INVALID",
+              "Field1": "",
+              "Field2": "",
+              "Field3": "",
               "ID": 1,
               "Name": "A name",
               "PathName": "A path",
+              "ReportType": "Schedule",
             }
           }
           key="3"
@@ -432,9 +472,13 @@ exports[`Row renders a normal cell 1`] = `
       Row={
         Object {
           "BuiltInCategory": "INVALID",
+          "Field1": "",
+          "Field2": "",
+          "Field3": "",
           "ID": 1,
           "Name": "A name",
           "PathName": "A path",
+          "ReportType": "Schedule",
         }
       }
     >
@@ -454,9 +498,13 @@ exports[`Row renders a normal cell 1`] = `
           Row={
             Object {
               "BuiltInCategory": "INVALID",
+              "Field1": "",
+              "Field2": "",
+              "Field3": "",
               "ID": 1,
               "Name": "A name",
               "PathName": "A path",
+              "ReportType": "Schedule",
             }
           }
           key="0"
@@ -483,9 +531,13 @@ exports[`Row renders a normal cell 1`] = `
           Row={
             Object {
               "BuiltInCategory": "INVALID",
+              "Field1": "",
+              "Field2": "",
+              "Field3": "",
               "ID": 1,
               "Name": "A name",
               "PathName": "A path",
+              "ReportType": "Schedule",
             }
           }
           key="1"
@@ -511,9 +563,13 @@ exports[`Row renders a normal cell 1`] = `
           Row={
             Object {
               "BuiltInCategory": "INVALID",
+              "Field1": "",
+              "Field2": "",
+              "Field3": "",
               "ID": 1,
               "Name": "A name",
               "PathName": "A path",
+              "ReportType": "Schedule",
             }
           }
           key="2"
@@ -539,9 +595,13 @@ exports[`Row renders a normal cell 1`] = `
           Row={
             Object {
               "BuiltInCategory": "INVALID",
+              "Field1": "",
+              "Field2": "",
+              "Field3": "",
               "ID": 1,
               "Name": "A name",
               "PathName": "A path",
+              "ReportType": "Schedule",
             }
           }
           key="3"

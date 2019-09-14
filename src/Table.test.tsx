@@ -3,13 +3,13 @@ import * as React from 'react';
 import { mount } from 'enzyme';
 
 import Socket from 'socket.io-client';
-import { ARCASocket, reducer, FACADSchedules } from 'arca-redux';
+import { ARCASocket, reducer, FACADReports } from 'arca-redux';
 import { createStore } from 'redux';
 
 import { Table } from './Table';
 
 const URL = 'http://localhost:8086';
-const Source = 'FACAD-Schedules';
+const Source = 'FACAD-Reports';
 
 test('Table renders "No Info"', (): void => {
   const el = (<Table Rows={[]}/>);
@@ -17,7 +17,7 @@ test('Table renders "No Info"', (): void => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('Table renders FACAD-Schedules', (done): void => {
+test('Table renders FACAD-Reports', (done): void => {
   const io = Socket(URL);
   const store = createStore(reducer);
   const socket = new ARCASocket(store, io);
@@ -40,7 +40,7 @@ test('Table renders FACAD-Schedules', (done): void => {
   });
 });
 
-test('Table FACAD-Schedules redacts one entry', (done): void => {
+test('Table FACAD-Reports redacts one entry', (done): void => {
   const io = Socket(URL);
   const store = createStore(reducer);
   const socket = new ARCASocket(store, io);
@@ -76,17 +76,21 @@ test('Table FACAD-Schedules redacts one entry', (done): void => {
   });
 });
 
-test('Table FACAD-Schedules renders a new Row', (done): void => {
+test('Table FACAD-Reports renders a new Row', (done): void => {
   const io = Socket(URL);
   const store = createStore(reducer);
   const socket = new ARCASocket(store, io);
 
-  const provideNewRow = (): FACADSchedules["Row"] => {
-    const newRow: FACADSchedules["Row"] = {
+  const provideNewRow = (): FACADReports["Row"] => {
+    const newRow: FACADReports["Row"] = {
       ID: 0,
       BuiltInCategory: 'INVALID',
+      ReportType: 'Schedule',
       Name: 'A name',
-      PathName: 'Path Name'
+      PathName: 'Path Name',
+      Field1: '',
+      Field2: '',
+      Field3: '',
     }
     return newRow;
   };

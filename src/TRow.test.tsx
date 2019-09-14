@@ -3,7 +3,7 @@ import * as React from 'react';
 import { mount } from 'enzyme';
 
 import { TRow } from './TRow';
-import { FACADSchedules, Info, Field, Row, Fields } from 'arca-redux';
+import { FACADReports, Info, Field, Row, Fields } from 'arca-redux';
 
 interface MockHanders {
   onEdit?: (Row: Row, column?: keyof Fields, Field?: Field) => void;
@@ -11,11 +11,15 @@ interface MockHanders {
 }
 
 function prepareMock1(overloadedHandlers?: MockHanders): JSX.Element {
-  const row: FACADSchedules["Row"] = {
+  const row: FACADReports["Row"] = {
     ID: 1,
     BuiltInCategory: 'INVALID',
+    ReportType: 'Schedule',
     Name: 'A name',
     PathName: 'A path',
+    Field1: '',
+    Field2: '',
+    Field3: '',
   }
 
   const handlers: MockHanders = overloadedHandlers || {};

@@ -17,9 +17,13 @@ exports[`Cell renders a normal cell 1`] = `
         Row={
           Object {
             "BuiltInCategory": "INVALID",
+            "Field1": "",
+            "Field2": "",
+            "Field3": "",
             "ID": 1,
             "Name": "A name",
             "PathName": "A path",
+            "ReportType": "Schedule",
           }
         }
       >
@@ -51,9 +55,13 @@ exports[`Cell renders an empty cell if field is incorrect 1`] = `
         Row={
           Object {
             "BuiltInCategory": "INVALID",
+            "Field1": "",
+            "Field2": "",
+            "Field3": "",
             "ID": 1,
             "Name": "A name",
             "PathName": "A path",
+            "ReportType": "Schedule",
           }
         }
       >
@@ -83,9 +91,13 @@ exports[`Click over a cell non-editable - nothing 1`] = `
         Row={
           Object {
             "BuiltInCategory": "INVALID",
+            "Field1": "",
+            "Field2": "",
+            "Field3": "",
             "ID": 1,
             "Name": "A name",
             "PathName": "A path",
+            "ReportType": "Schedule",
           }
         }
       >
@@ -117,9 +129,13 @@ exports[`Click over a primary cell - nothing 1`] = `
         Row={
           Object {
             "BuiltInCategory": "INVALID",
+            "Field1": "",
+            "Field2": "",
+            "Field3": "",
             "ID": 1,
             "Name": "A name",
             "PathName": "A path",
+            "ReportType": "Schedule",
           }
         }
       >
@@ -152,9 +168,13 @@ exports[`Click over cell renders an input 1`] = `
         Row={
           Object {
             "BuiltInCategory": "INVALID",
+            "Field1": "",
+            "Field2": "",
+            "Field3": "",
             "ID": 1,
             "Name": "A name",
             "PathName": "A path",
+            "ReportType": "Schedule",
           }
         }
       >
@@ -199,9 +219,13 @@ exports[`Finish edit fires onEdit 1`] = `
         Row={
           Object {
             "BuiltInCategory": "INVALID",
+            "Field1": "",
+            "Field2": "",
+            "Field3": "",
             "ID": 1,
             "Name": "A name",
             "PathName": "A path",
+            "ReportType": "Schedule",
           }
         }
         onEdit={[Function]}
@@ -235,9 +259,13 @@ exports[`Finish edit if Enter 1`] = `
         Row={
           Object {
             "BuiltInCategory": "INVALID",
+            "Field1": "",
+            "Field2": "",
+            "Field3": "",
             "ID": 1,
             "Name": "A name",
             "PathName": "A path",
+            "ReportType": "Schedule",
           }
         }
       >
@@ -270,9 +298,13 @@ exports[`Finish edit if blur 1`] = `
         Row={
           Object {
             "BuiltInCategory": "INVALID",
+            "Field1": "",
+            "Field2": "",
+            "Field3": "",
             "ID": 1,
             "Name": "A name",
             "PathName": "A path",
+            "ReportType": "Schedule",
           }
         }
       >

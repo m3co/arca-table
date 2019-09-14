@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Table FACAD-Schedules redacts one entry 1`] = `
+exports[`Table FACAD-Reports redacts one entry 1`] = `
 <Table
   Info={
     Object {
@@ -603,7 +603,7 @@ exports[`Table FACAD-Schedules redacts one entry 1`] = `
 </Table>
 `;
 
-exports[`Table FACAD-Schedules redacts one entry 2`] = `
+exports[`Table FACAD-Reports redacts one entry 2`] = `
 <Table
   Info={
     Object {
@@ -1206,7 +1206,7 @@ exports[`Table FACAD-Schedules redacts one entry 2`] = `
 </Table>
 `;
 
-exports[`Table FACAD-Schedules redacts one entry 3`] = `
+exports[`Table FACAD-Reports redacts one entry 3`] = `
 <Table
   Info={
     Object {
@@ -1797,7 +1797,7 @@ exports[`Table FACAD-Schedules redacts one entry 3`] = `
 </Table>
 `;
 
-exports[`Table FACAD-Schedules renders a new Row 1`] = `
+exports[`Table FACAD-Reports renders a new Row 1`] = `
 <Table
   Info={
     Object {
@@ -2385,7 +2385,7 @@ exports[`Table FACAD-Schedules renders a new Row 1`] = `
 </Table>
 `;
 
-exports[`Table FACAD-Schedules renders a new Row 2`] = `
+exports[`Table FACAD-Reports renders a new Row 2`] = `
 <Table
   Info={
     Object {
@@ -2604,9 +2604,13 @@ exports[`Table FACAD-Schedules renders a new Row 2`] = `
       newRow={
         Object {
           "BuiltInCategory": "INVALID",
+          "Field1": "",
+          "Field2": "",
+          "Field3": "",
           "ID": 0,
           "Name": "A name",
           "PathName": "Path Name",
+          "ReportType": "Schedule",
         }
       }
       onDeleteNewRow={[Function]}
@@ -2664,9 +2668,13 @@ exports[`Table FACAD-Schedules renders a new Row 2`] = `
           Row={
             Object {
               "BuiltInCategory": "INVALID",
+              "Field1": "",
+              "Field2": "",
+              "Field3": "",
               "ID": 0,
               "Name": "A name",
               "PathName": "Path Name",
+              "ReportType": "Schedule",
             }
           }
           dirty={true}
@@ -2692,9 +2700,13 @@ exports[`Table FACAD-Schedules renders a new Row 2`] = `
               Row={
                 Object {
                   "BuiltInCategory": "INVALID",
+                  "Field1": "",
+                  "Field2": "",
+                  "Field3": "",
                   "ID": 0,
                   "Name": "A name",
                   "PathName": "Path Name",
+                  "ReportType": "Schedule",
                 }
               }
               key="0"
@@ -2722,9 +2734,13 @@ exports[`Table FACAD-Schedules renders a new Row 2`] = `
               Row={
                 Object {
                   "BuiltInCategory": "INVALID",
+                  "Field1": "",
+                  "Field2": "",
+                  "Field3": "",
                   "ID": 0,
                   "Name": "A name",
                   "PathName": "Path Name",
+                  "ReportType": "Schedule",
                 }
               }
               key="1"
@@ -2751,9 +2767,13 @@ exports[`Table FACAD-Schedules renders a new Row 2`] = `
               Row={
                 Object {
                   "BuiltInCategory": "INVALID",
+                  "Field1": "",
+                  "Field2": "",
+                  "Field3": "",
                   "ID": 0,
                   "Name": "A name",
                   "PathName": "Path Name",
+                  "ReportType": "Schedule",
                 }
               }
               key="2"
@@ -2780,9 +2800,13 @@ exports[`Table FACAD-Schedules renders a new Row 2`] = `
               Row={
                 Object {
                   "BuiltInCategory": "INVALID",
+                  "Field1": "",
+                  "Field2": "",
+                  "Field3": "",
                   "ID": 0,
                   "Name": "A name",
                   "PathName": "Path Name",
+                  "ReportType": "Schedule",
                 }
               }
               key="3"
@@ -3171,7 +3195,7 @@ exports[`Table FACAD-Schedules renders a new Row 2`] = `
 </Table>
 `;
 
-exports[`Table FACAD-Schedules renders a new Row 3`] = `
+exports[`Table FACAD-Reports renders a new Row 3`] = `
 <Table
   Info={
     Object {
@@ -3390,9 +3414,13 @@ exports[`Table FACAD-Schedules renders a new Row 3`] = `
       newRow={
         Object {
           "BuiltInCategory": "new value",
+          "Field1": "",
+          "Field2": "",
+          "Field3": "",
           "ID": 0,
           "Name": "A name",
           "PathName": "Path Name",
+          "ReportType": "Schedule",
         }
       }
       onDeleteNewRow={[Function]}
@@ -3450,9 +3478,13 @@ exports[`Table FACAD-Schedules renders a new Row 3`] = `
           Row={
             Object {
               "BuiltInCategory": "new value",
+              "Field1": "",
+              "Field2": "",
+              "Field3": "",
               "ID": 0,
               "Name": "A name",
               "PathName": "Path Name",
+              "ReportType": "Schedule",
             }
           }
           dirty={true}
@@ -3478,9 +3510,13 @@ exports[`Table FACAD-Schedules renders a new Row 3`] = `
               Row={
                 Object {
                   "BuiltInCategory": "new value",
+                  "Field1": "",
+                  "Field2": "",
+                  "Field3": "",
                   "ID": 0,
                   "Name": "A name",
                   "PathName": "Path Name",
+                  "ReportType": "Schedule",
                 }
               }
               key="0"
@@ -3508,9 +3544,13 @@ exports[`Table FACAD-Schedules renders a new Row 3`] = `
               Row={
                 Object {
                   "BuiltInCategory": "new value",
+                  "Field1": "",
+                  "Field2": "",
+                  "Field3": "",
                   "ID": 0,
                   "Name": "A name",
                   "PathName": "Path Name",
+                  "ReportType": "Schedule",
                 }
               }
               key="1"
@@ -3537,9 +3577,13 @@ exports[`Table FACAD-Schedules renders a new Row 3`] = `
               Row={
                 Object {
                   "BuiltInCategory": "new value",
+                  "Field1": "",
+                  "Field2": "",
+                  "Field3": "",
                   "ID": 0,
                   "Name": "A name",
                   "PathName": "Path Name",
+                  "ReportType": "Schedule",
                 }
               }
               key="2"
@@ -3566,9 +3610,13 @@ exports[`Table FACAD-Schedules renders a new Row 3`] = `
               Row={
                 Object {
                   "BuiltInCategory": "new value",
+                  "Field1": "",
+                  "Field2": "",
+                  "Field3": "",
                   "ID": 0,
                   "Name": "A name",
                   "PathName": "Path Name",
+                  "ReportType": "Schedule",
                 }
               }
               key="3"
@@ -3967,7 +4015,7 @@ exports[`Table renders "No Info" 1`] = `
 </Table>
 `;
 
-exports[`Table renders FACAD-Schedules 1`] = `
+exports[`Table renders FACAD-Reports 1`] = `
 <Table
   Info={
     Object {

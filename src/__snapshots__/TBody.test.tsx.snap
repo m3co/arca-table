@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TBody adds a new row FACAD-Schedules 1`] = `
+exports[`TBody adds a new row FACAD-Reports 1`] = `
 <table>
   <TBody
     Info={
@@ -69,9 +69,13 @@ exports[`TBody adds a new row FACAD-Schedules 1`] = `
     newRow={
       Object {
         "BuiltInCategory": "INVALID",
+        "Field1": "",
+        "Field2": "",
+        "Field3": "",
         "ID": 0,
         "Name": "A name",
         "PathName": "Path Name",
+        "ReportType": "Schedule",
       }
     }
   >
@@ -127,9 +131,13 @@ exports[`TBody adds a new row FACAD-Schedules 1`] = `
         Row={
           Object {
             "BuiltInCategory": "INVALID",
+            "Field1": "",
+            "Field2": "",
+            "Field3": "",
             "ID": 0,
             "Name": "A name",
             "PathName": "Path Name",
+            "ReportType": "Schedule",
           }
         }
         dirty={true}
@@ -153,9 +161,13 @@ exports[`TBody adds a new row FACAD-Schedules 1`] = `
             Row={
               Object {
                 "BuiltInCategory": "INVALID",
+                "Field1": "",
+                "Field2": "",
+                "Field3": "",
                 "ID": 0,
                 "Name": "A name",
                 "PathName": "Path Name",
+                "ReportType": "Schedule",
               }
             }
             key="0"
@@ -182,9 +194,13 @@ exports[`TBody adds a new row FACAD-Schedules 1`] = `
             Row={
               Object {
                 "BuiltInCategory": "INVALID",
+                "Field1": "",
+                "Field2": "",
+                "Field3": "",
                 "ID": 0,
                 "Name": "A name",
                 "PathName": "Path Name",
+                "ReportType": "Schedule",
               }
             }
             key="1"
@@ -210,9 +226,13 @@ exports[`TBody adds a new row FACAD-Schedules 1`] = `
             Row={
               Object {
                 "BuiltInCategory": "INVALID",
+                "Field1": "",
+                "Field2": "",
+                "Field3": "",
                 "ID": 0,
                 "Name": "A name",
                 "PathName": "Path Name",
+                "ReportType": "Schedule",
               }
             }
             key="2"
@@ -238,9 +258,13 @@ exports[`TBody adds a new row FACAD-Schedules 1`] = `
             Row={
               Object {
                 "BuiltInCategory": "INVALID",
+                "Field1": "",
+                "Field2": "",
+                "Field3": "",
                 "ID": 0,
                 "Name": "A name",
                 "PathName": "Path Name",
+                "ReportType": "Schedule",
               }
             }
             key="3"
@@ -627,7 +651,7 @@ exports[`TBody adds a new row FACAD-Schedules 1`] = `
 </table>
 `;
 
-exports[`TBody renders FACAD-Schedules 1`] = `
+exports[`TBody renders FACAD-Reports 1`] = `
 <table>
   <TBody
     Info={

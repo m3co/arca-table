@@ -3,15 +3,15 @@ import * as React from 'react';
 import { mount } from 'enzyme';
 
 import Socket from 'socket.io-client';
-import { ARCASocket, reducer, FACADSchedules } from 'arca-redux';
+import { ARCASocket, reducer, FACADReports } from 'arca-redux';
 import { createStore } from 'redux';
 
 import { TBody } from './TBody';
 
 const URL = 'http://localhost:8086';
-const Source = 'FACAD-Schedules';
+const Source = 'FACAD-Reports';
 
-test('TBody renders FACAD-Schedules', (done): void => {
+test('TBody renders FACAD-Reports', (done): void => {
   const io = Socket(URL);
   const store = createStore(reducer);
   const socket = new ARCASocket(store, io);
@@ -39,16 +39,20 @@ test('TBody renders FACAD-Schedules', (done): void => {
   });
 });
 
-test('TBody adds a new row FACAD-Schedules', (done): void => {
+test('TBody adds a new row FACAD-Reports', (done): void => {
   const io = Socket(URL);
   const store = createStore(reducer);
   const socket = new ARCASocket(store, io);
 
-  const newRow: FACADSchedules["Row"] = {
+  const newRow: FACADReports["Row"] = {
     ID: 0,
     BuiltInCategory: 'INVALID',
+    ReportType: 'Schedule',
     Name: 'A name',
-    PathName: 'Path Name'
+    PathName: 'Path Name',
+    Field1: '',
+    Field2: '',
+    Field3: '',
   };
 
   socket.GetInfo(Source);
