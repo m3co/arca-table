@@ -1,10 +1,15 @@
 import * as React from 'react';
 
 interface Props {
+  type?: string;
   value: string;
   onBlur?: (currentValue: string) => void;
   onEnter?: (currentValue: string) => void;
   onEsc?: () => void;
+}
+
+interface DefaultProps {
+  type: string,
 }
 
 interface State {
@@ -16,6 +21,10 @@ export class Input
 {
   public state: State = {
     value: '',
+  }
+
+  public static defaultProps: DefaultProps = {
+    type: 'Text',
   }
 
   public constructor(props: Props) {
@@ -51,8 +60,10 @@ export class Input
 
   public render(): JSX.Element {
     const { value } = this.state;
+    const { type } = this.props;
     return (
       <input
+        type={type}
         autoFocus={true}
         onChange={this.onChange}
         onKeyUp={this.onKeyUp}

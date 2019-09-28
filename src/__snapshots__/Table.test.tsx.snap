@@ -361,6 +361,7 @@ exports[`Table FACAD-Reports redacts one entry 1`] = `
                   onBlur={[Function]}
                   onEnter={[Function]}
                   onEsc={[Function]}
+                  type="String"
                   value="INVALID"
                 >
                   <input
@@ -368,6 +369,7 @@ exports[`Table FACAD-Reports redacts one entry 1`] = `
                     onBlur={[Function]}
                     onChange={[Function]}
                     onKeyUp={[Function]}
+                    type="String"
                     value="INVALID"
                   />
                 </Input>
@@ -964,6 +966,7 @@ exports[`Table FACAD-Reports redacts one entry 2`] = `
                   onBlur={[Function]}
                   onEnter={[Function]}
                   onEsc={[Function]}
+                  type="String"
                   value="INVALID"
                 >
                   <input
@@ -971,6 +974,7 @@ exports[`Table FACAD-Reports redacts one entry 2`] = `
                     onBlur={[Function]}
                     onChange={[Function]}
                     onKeyUp={[Function]}
+                    type="String"
                     value="new value"
                   />
                 </Input>

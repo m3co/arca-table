@@ -185,6 +185,7 @@ exports[`Click over cell renders an input 1`] = `
             onBlur={[Function]}
             onEnter={[Function]}
             onEsc={[Function]}
+            type="Text"
             value="A name"
           >
             <input
@@ -192,6 +193,7 @@ exports[`Click over cell renders an input 1`] = `
               onBlur={[Function]}
               onChange={[Function]}
               onKeyUp={[Function]}
+              type="Text"
               value="A name"
             />
           </Input>

@@ -123,6 +123,7 @@ export class TCell
                 onEsc={this.cancelEdit} />
             ) : (
               <Input
+                type={Field.Type}
                 value={value.toString()}
                 onBlur={this.finishEdit(column)}
                 onEnter={this.finishEdit(column)}
