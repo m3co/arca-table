@@ -11,7 +11,7 @@ exports[`Cell renders a normal cell 1`] = `
             "Name": "Name",
             "Primary": false,
             "Required": false,
-            "Type": "String",
+            "Type": "Text",
           }
         }
         Row={
@@ -49,7 +49,7 @@ exports[`Cell renders an empty cell if field is incorrect 1`] = `
             "Name": "Name Incorrect",
             "Primary": false,
             "Required": false,
-            "Type": "String",
+            "Type": "Text",
           }
         }
         Row={
@@ -85,7 +85,7 @@ exports[`Click over a cell non-editable - nothing 1`] = `
             "Name": "BuiltInCategory",
             "Primary": false,
             "Required": false,
-            "Type": "String",
+            "Type": "Text",
           }
         }
         Row={
@@ -123,7 +123,7 @@ exports[`Click over a primary cell - nothing 1`] = `
             "Name": "ID",
             "Primary": true,
             "Required": false,
-            "Type": "String",
+            "Type": "Text",
           }
         }
         Row={
@@ -162,7 +162,7 @@ exports[`Click over cell renders an input 1`] = `
             "Name": "Name",
             "Primary": false,
             "Required": false,
-            "Type": "String",
+            "Type": "Text",
           }
         }
         Row={
@@ -213,7 +213,7 @@ exports[`Finish edit fires onEdit 1`] = `
             "Name": "BuiltInCategory",
             "Primary": false,
             "Required": false,
-            "Type": "String",
+            "Type": "Text",
           }
         }
         Row={
@@ -253,7 +253,7 @@ exports[`Finish edit if Enter 1`] = `
             "Name": "BuiltInCategory",
             "Primary": false,
             "Required": false,
-            "Type": "String",
+            "Type": "Text",
           }
         }
         Row={
@@ -292,7 +292,7 @@ exports[`Finish edit if blur 1`] = `
             "Name": "BuiltInCategory",
             "Primary": false,
             "Required": false,
-            "Type": "String",
+            "Type": "Text",
           }
         }
         Row={

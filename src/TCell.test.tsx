@@ -7,26 +7,31 @@ import { State, Params, FACADReports, Field, Fields, Row } from 'arca-redux';
 
 interface Response {
   ID: string;
-  Method: "Search";
+  Method: 'Search';
   Context: {
     Field: keyof Fields;
-    Source: keyof State["Source"];
+    Source: keyof State['Source'];
   };
   Result: Params[];
   Error: {} | null;
 };
 
-const searchMock = (Source: keyof State["Source"],
+const searchMock = (Source: keyof State['Source'],
   Field: keyof Fields,
   Params: Params): Promise<Response> => {
   const response: Response = {
     ID: '',
-    Method: "Search",
+    Method: 'Search',
     Context: {
       Field,
       Source,
     },
-    Result: [{BuiltInCategory:"OST_InternalLineLoads"},{BuiltInCategory:"OST_InternalLineLoadTags"},{BuiltInCategory:"OST_LineLoads"},{BuiltInCategory:"OST_LineLoadTags"}],
+    Result: [
+      {BuiltInCategory: 'OST_InternalLineLoads'},
+      {BuiltInCategory: 'OST_InternalLineLoadTags'},
+      {BuiltInCategory: 'OST_LineLoads'},
+      {BuiltInCategory: 'OST_LineLoadTags'},
+    ],
     Error: null,
   };
   return Promise.resolve(response);
@@ -38,7 +43,7 @@ interface MockHanders {
 };
 
 function prepareMock1(overloadField?: Field, overloadedHandlers?: MockHanders): JSX.Element {
-  const row: FACADReports["Row"] = {
+  const row: FACADReports['Row'] = {
     ID: 1,
     BuiltInCategory: 'INVALID',
     ReportType: 'Schedule',
@@ -53,7 +58,7 @@ function prepareMock1(overloadField?: Field, overloadedHandlers?: MockHanders): 
     Editable: true,
     Primary: false,
     Name: 'Name',
-    Type: 'String',
+    Type: 'Text',
     Required: false,
   };
 
@@ -77,17 +82,17 @@ test('Cell renders a normal cell', (): void => {
 
 test('Cell renders a combobox cell', (): void => {
   const field: Field = {
-    Name:"BuiltInCategory",
-    Type:"String",
-    Primary:false,
-    Required:true,
-    Editable:true,
+    Name: 'BuiltInCategory',
+    Type: 'Text',
+    Primary: false,
+    Required: true,
+    Editable: true,
     Combobox:{
-      Source:"FACAD-BuiltInCategories",
-      Display:"BuiltInCategory",
-      Value:"BuiltInCategory",
+      Source: 'FACAD-BuiltInCategories',
+      Display: 'BuiltInCategory',
+      Value: 'BuiltInCategory',
       Params:{
-        BuiltInCategory:"BuiltInCategory"
+        BuiltInCategory: 'BuiltInCategory'
       }
     }
   };
@@ -102,7 +107,7 @@ test('Cell renders an empty cell if field is incorrect', (): void => {
     Editable: true,
     Primary: false,
     Name: 'Name Incorrect',
-    Type: 'String',
+    Type: 'Text',
     Required: false,
   }
 
@@ -124,7 +129,7 @@ test('Click over a primary cell - nothing', (): void => {
     Editable: true,
     Primary: true,
     Name: 'ID',
-    Type: 'String',
+    Type: 'Text',
     Required: false,
   }
 
@@ -140,7 +145,7 @@ test('Click over a cell non-editable - nothing', (): void => {
     Editable: false,
     Primary: false,
     Name: 'BuiltInCategory',
-    Type: 'String',
+    Type: 'Text',
     Required: false,
   }
 
@@ -156,7 +161,7 @@ test('Cancel edit by pressing ESC', (): void => {
     Editable: true,
     Primary: false,
     Name: 'BuiltInCategory',
-    Type: 'String',
+    Type: 'Text',
     Required: false,
   }
 
@@ -174,7 +179,7 @@ test('Finish edit if blur', (): void => {
     Editable: true,
     Primary: false,
     Name: 'BuiltInCategory',
-    Type: 'String',
+    Type: 'Text',
     Required: false,
   }
 
@@ -194,7 +199,7 @@ test('Finish edit if Enter', (): void => {
     Editable: true,
     Primary: false,
     Name: 'BuiltInCategory',
-    Type: 'String',
+    Type: 'Text',
     Required: false,
   }
 
@@ -214,7 +219,7 @@ test('Finish edit fires onEdit', (): void => {
     Editable: true,
     Primary: false,
     Name: 'BuiltInCategory',
-    Type: 'String',
+    Type: 'Text',
     Required: false,
   }
 
