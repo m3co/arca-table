@@ -17,7 +17,7 @@ interface Props {
 interface State {
   edit: boolean;
   dirty: boolean;
-  value: string;
+  value: string | number | boolean;
   column?: keyof Fields;
 }
 
@@ -81,7 +81,9 @@ export class TCell
     });
   }
 
-  private finishEdit = (column: keyof Fields): (currentValue: string) => void => (currentValue: string): void => {
+  private finishEdit = (column: keyof Fields):
+    (currentValue: string | number | boolean) => void =>
+    (currentValue: string | number | boolean): void => {
     this.setState((state: State): State => {
       if (this.props.onEdit) {
         const { Field, Row } = this.props;

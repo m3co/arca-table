@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Input changes its numeric value 1`] = `
+<Input
+  type="number"
+  value={10}
+>
+  <input
+    autoFocus={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyUp={[Function]}
+    type="number"
+    value="20"
+  />
+</Input>
+`;
+
 exports[`Input changes its value 1`] = `
 <Input
   type="Text"

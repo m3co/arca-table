@@ -22,8 +22,8 @@ interface Response {
 const URL = 'http://localhost:8086';
 
 interface MockFns {
-  onBlur?: (currentValue: string) => void;
-  onEnter?: (currentValue: string) => void;
+  onBlur?: (currentValue: string | number | boolean) => void;
+  onEnter?: (currentValue: string | number | boolean) => void;
   onEsc?: () => void;
 }
 
@@ -111,7 +111,7 @@ test('Search changes its value', (): void => {
 
 test('Search fires onBlur', (): void => {
   let onBlurReached = false;
-  const onBlur = (currentValue: string): void => {
+  const onBlur = (currentValue: string | number | boolean): void => {
     expect(currentValue).toBe('INVALID');
     onBlurReached = true;
   }
@@ -124,7 +124,7 @@ test('Search fires onBlur', (): void => {
 
 test('Search ignores onEnter if altKey', (): void => {
   const value = 'INVALID';
-  const onEnter = (currentValue: string): void => {
+  const onEnter = (currentValue: string | number | boolean): void => {
     expect(currentValue).toBe(value);
     fail();
   }
@@ -135,7 +135,7 @@ test('Search ignores onEnter if altKey', (): void => {
 
 test('Search accepts onEnter', (): void => {
   const value = 'INVALID';
-  const onEnter = (currentValue: string): void => {
+  const onEnter = (currentValue: string | number | boolean): void => {
     expect(currentValue).toBe(value);
   }
   const el = prepareMock2(searchMock, {onEnter});

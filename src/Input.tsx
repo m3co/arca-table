@@ -2,9 +2,9 @@ import * as React from 'react';
 
 interface Props {
   type?: string;
-  value: string;
-  onBlur?: (currentValue: string) => void;
-  onEnter?: (currentValue: string) => void;
+  value: string | number | boolean;
+  onBlur?: (currentValue: string | number | boolean) => void;
+  onEnter?: (currentValue: string | number | boolean) => void;
   onEsc?: () => void;
 }
 
@@ -13,7 +13,7 @@ interface DefaultProps {
 }
 
 interface State {
-  value: string;
+  value: string | number | boolean;
 }
 
 export class Input
@@ -33,7 +33,18 @@ export class Input
   }
 
   private onChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    this.setState({ value: event.target.value }); // TODO... again
+    const { type } = this.props;
+    if (type) {
+      switch (type.toLowerCase()) {
+        case 'number':
+          return this.setState({ value: Number(event.target.value) });
+        case 'checkbox':
+          return this.setState({ value: Boolean(event.target.checked) });
+        default:
+          break;
+      }
+    }
+    this.setState({ value: event.target.value });
   }
 
   private onKeyUp = (event: React.KeyboardEvent<HTMLInputElement>): void => {
@@ -68,7 +79,7 @@ export class Input
         onChange={this.onChange}
         onKeyUp={this.onKeyUp}
         onBlur={this.onBlur}
-        value={value}></input>
+        value={value.toString()}></input>
     );
   }
 }

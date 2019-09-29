@@ -17,10 +17,18 @@ test('Input changes its value', (): void => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('Input changes its numeric value', (): void => {
+  const el = (<Input value={10} type="number" />);
+  const wrapper = mount(el);
+  wrapper.find('input').simulate('change', { target: { value: 20 } });
+  expect(wrapper).toMatchSnapshot();
+});
+
+
 test('Input fires onBlur', (): void => {
   const value = 'value A';
   let onBlurReached = false;
-  const onBlur = (currentValue: string): void => {
+  const onBlur = (currentValue: string | number | boolean): void => {
     expect(currentValue).toBe(value);
     onBlurReached = true;
   }
@@ -32,7 +40,7 @@ test('Input fires onBlur', (): void => {
 
 test('Input ignores onEnter if altKey', (): void => {
   const value = 'value A';
-  const onEnter = (currentValue: string): void => {
+  const onEnter = (currentValue: string | number | boolean): void => {
     expect(currentValue).toBe(value);
     fail();
   }
@@ -44,7 +52,7 @@ test('Input ignores onEnter if altKey', (): void => {
 test('Input fires onEnter', (): void => {
   const value = 'value A';
   let onEnterReached = false;
-  const onEnter = (currentValue: string): void => {
+  const onEnter = (currentValue: string | number | boolean): void => {
     expect(currentValue).toBe(value);
     onEnterReached = true;
   }
