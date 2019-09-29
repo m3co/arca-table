@@ -6,6 +6,7 @@ import { TBody } from './TBody';
 import { Field, Fields, Row, Info } from 'arca-redux'
 
 interface Props {
+  Title?: string;
   Info?: Info;
   Rows: Row[];
   Requests?: string[];
@@ -70,7 +71,7 @@ export class Table
   }
 
   public render(): JSX.Element {
-    const { Info, Rows, onInsert, onDelete, onUpdate } = this.props;
+    const { Title, Info, Rows, onInsert, onDelete, onUpdate } = this.props;
     const { newRow } = this.state;
     if (!Info) {
       return (<div>No Info</div>);
@@ -80,6 +81,7 @@ export class Table
         {
           this.props.provideEmptyRow &&
           (<caption>
+            {Title ? (<strong>{Title}</strong>) : undefined}
             <button onClick={this.startInsert}>+</button>
           </caption>)
         }
