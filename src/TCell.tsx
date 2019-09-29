@@ -6,6 +6,7 @@ import { Search } from './Search';
 import { Row, Field, Fields, SearchMethod } from 'arca-redux/';
 
 import './TCell.less';
+import { bool } from 'prop-types';
 
 interface Props {
   Field: Field;
@@ -41,20 +42,25 @@ export class TCell
     if (column) {
       const row = Row as Fields;
       const value = row[column];
-      this.state.value = value ? value.toString() : '';
+      if (Field.Type.toLowerCase() == 'checkbox') {
+        this.state.value = Boolean(value);
+      } else {
+        this.state.value = value ? value.toString() : '';
+      }
       this.state.column = column;
     }
   }
 
   public componentDidUpdate(prevProps: Props): void {
-    const { props, state } = this;
+    const { props, props: { Field: { Type } }, state } = this;
     if (state.column && prevProps.Row !== props.Row) {
       const row = props.Row as Fields;
       const value = row[state.column];
       this.setState((state: State): State => {
         return {
           ...state,
-          value: value ? value.toString() : '',
+          value: Type.toLowerCase() == 'checkbox' ?
+            Boolean(value) : (value ? value.toString() : ''),
           dirty: false
         };
       });
@@ -102,12 +108,45 @@ export class TCell
     });
   }
 
+  private onChangeCheckbox = (column: keyof Fields): () => void => {
+    return (): void => {
+      const { Field, Row } = this.props;
+      if (!Field.Editable) return;
+      this.setState((state: State): State => {
+        const currentValue = !state.value;
+        if (this.props.onEdit) {
+          const newRow = {
+            ...Row,
+            [column]: currentValue,
+          };
+          this.props.onEdit(newRow, column, Field);
+        }
+        return {
+          ...state,
+          value: currentValue,
+          edit: false,
+          dirty: true,
+        }
+      })
+    }
+  }
+
   public render(): JSX.Element {
     const { Field, Row, search } = this.props;
     const row = Row as Fields;
     const { Combobox } = Field;
     const { value, column, dirty } = this.state;
     const className = `${Field.Primary ? 'primary' : ''} ${dirty ? 'dirty' : ''}`.trim();
+    if (column && Field.Type.toLowerCase() == 'checkbox') {
+      return (
+        <td>
+          <input
+            type={Field.Type}
+            checked={!!value}
+            onChange={this.onChangeCheckbox(column)} />
+        </td>
+      );
+    }
     return (column) ?
       (
         <td
