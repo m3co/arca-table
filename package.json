@@ -1,6 +1,6 @@
 {
   "name": "arca-table",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "description": "Dibuje lo que sea pero que sea una tabla",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -31,7 +31,7 @@
     "typescript": "^3.6.3"
   },
   "dependencies": {
-    "arca-redux": "^2.0.27",
+    "arca-redux": "^2.0.28",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
   }
