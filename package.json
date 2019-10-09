@@ -31,7 +31,7 @@
     "typescript": "^3.6.3"
   },
   "dependencies": {
-    "arca-redux": "^2.0.28",
+    "arca-redux": "^2.0.29",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
   }
