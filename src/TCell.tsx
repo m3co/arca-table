@@ -13,9 +13,11 @@ interface Props {
   Row: Row;
   onEdit?: (Row: Row, column?: keyof Fields, Field?: Field) => void;
   search?: SearchMethod;
+  isNew?: boolean;
 }
 
 interface State {
+  isNew?: boolean;
   edit: boolean;
   dirty: boolean;
   value: string | number | boolean;
@@ -26,6 +28,7 @@ export class TCell
   extends React.Component<Props, State>
 {
   public state: State = {
+    isNew: false,
     edit: false,
     dirty: false,
     value: '',
@@ -68,6 +71,16 @@ export class TCell
   }
 
   private startEdit = (): void => {
+    if (this.props.isNew) {
+      if (this.props.Field.Required) {
+        this.setState((state: State): State => {
+          return {
+            ...state,
+            edit: true,
+          };
+        });
+      }
+    }
     if (!this.props.Field.Editable) return;
     this.setState((state: State): State => {
       return {

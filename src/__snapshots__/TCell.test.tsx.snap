@@ -112,7 +112,62 @@ exports[`Click over a cell non-editable - nothing 1`] = `
 </table>
 `;
 
-exports[`Click over a primary cell - nothing 1`] = `
+exports[`Click over a new and primary cell non-editable but required - edit 1`] = `
+<table>
+  <tbody>
+    <tr>
+      <TCell
+        Field={
+          Object {
+            "Editable": false,
+            "Name": "ID",
+            "Primary": true,
+            "Required": true,
+            "Type": "Text",
+          }
+        }
+        Row={
+          Object {
+            "BuiltInCategory": "INVALID",
+            "Field1": "",
+            "Field2": "",
+            "Field3": "",
+            "ID": 1,
+            "Name": "A name",
+            "PathName": "A path",
+            "ReportType": "Schedule",
+          }
+        }
+        isNew={true}
+      >
+        <td
+          className="primary"
+          onClick={[Function]}
+        >
+          <Input
+            onBlur={[Function]}
+            onEnter={[Function]}
+            onEsc={[Function]}
+            type="Text"
+            value="1"
+          >
+            <input
+              autoFocus={true}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onKeyUp={[Function]}
+              type="Text"
+              value="1"
+            />
+          </Input>
+        </td>
+      </TCell>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Click over a primary cell editable - edit 1`] = `
 <table>
   <tbody>
     <tr>

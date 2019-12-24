@@ -13,6 +13,7 @@ interface Props {
   onRemove?: (Row: Row) => void;
   dirty?: boolean;
   search?: SearchMethod;
+  isNew?: boolean;
 }
 
 interface State {
@@ -69,7 +70,7 @@ export class TRow
   }
 
   public render(): JSX.Element {
-    const { Info, Row, onEdit, search } = this.props;
+    const { Info, Row, onEdit, search, isNew } = this.props;
     const { dirty } = this.state;
     const className = dirty ? 'dirty' : undefined;
     return (
@@ -81,7 +82,8 @@ export class TRow
               Row={Row}
               Field={field}
               onEdit={onEdit}
-              search={search} />
+              search={search}
+              isNew={isNew} />
           )
         }
         <td>

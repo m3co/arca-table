@@ -43,6 +43,7 @@ export class TBody
             onEdit={onInsert}
             onRemove={onDeleteNewRow}
             dirty={true}
+            isNew={true}
             search={this.search} />
         }
         {

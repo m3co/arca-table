@@ -40,6 +40,7 @@ const searchMock = (Source: keyof State['Source'],
 interface MockHanders {
   onEdit?: (Row: Row, column?: keyof Fields, Field?: Field) => void;
   search?: typeof searchMock;
+  isNew?: boolean;
 };
 
 function prepareMock1(overloadField?: Field, overloadedHandlers?: MockHanders): JSX.Element {
@@ -67,7 +68,7 @@ function prepareMock1(overloadField?: Field, overloadedHandlers?: MockHanders): 
     <table>
       <tbody>
         <tr>
-          <TCell Row={row} Field={field} onEdit={handlers.onEdit} search={handlers.search} />
+          <TCell Row={row} Field={field} onEdit={handlers.onEdit} search={handlers.search} isNew={handlers.isNew} />
         </tr>
       </tbody>
     </table>
@@ -124,7 +125,7 @@ test('Click over cell renders an input', (): void => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('Click over a primary cell - nothing', (): void => {
+test('Click over a primary cell editable - edit', (): void => {
   const field: Field = {
     Editable: true,
     Primary: true,
@@ -134,6 +135,22 @@ test('Click over a primary cell - nothing', (): void => {
   }
 
   const el = prepareMock1(field);
+  const wrapper = mount(el);
+  wrapper.find('TCell').simulate('click');
+  expect(wrapper.find('TCell input').length).toBe(1);
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('Click over a new and primary cell non-editable but required - edit', (): void => {
+  const field: Field = {
+    Editable: false,
+    Primary: true,
+    Name: 'ID',
+    Type: 'Text',
+    Required: true,
+  }
+
+  const el = prepareMock1(field, {isNew: true});
   const wrapper = mount(el);
   wrapper.find('TCell').simulate('click');
   expect(wrapper.find('TCell input').length).toBe(1);
