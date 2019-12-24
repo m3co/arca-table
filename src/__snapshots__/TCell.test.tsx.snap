@@ -143,7 +143,22 @@ exports[`Click over a primary cell - nothing 1`] = `
           className="primary"
           onClick={[Function]}
         >
-          1
+          <Input
+            onBlur={[Function]}
+            onEnter={[Function]}
+            onEsc={[Function]}
+            type="Text"
+            value="1"
+          >
+            <input
+              autoFocus={true}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onKeyUp={[Function]}
+              type="Text"
+              value="1"
+            />
+          </Input>
         </td>
       </TCell>
     </tr>

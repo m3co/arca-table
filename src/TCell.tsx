@@ -68,7 +68,6 @@ export class TCell
   }
 
   private startEdit = (): void => {
-    if (this.props.Field.Primary) return;
     if (!this.props.Field.Editable) return;
     this.setState((state: State): State => {
       return {

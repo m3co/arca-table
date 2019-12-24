@@ -136,7 +136,7 @@ test('Click over a primary cell - nothing', (): void => {
   const el = prepareMock1(field);
   const wrapper = mount(el);
   wrapper.find('TCell').simulate('click');
-  expect(wrapper.find('TCell input').length).toBe(0);
+  expect(wrapper.find('TCell input').length).toBe(1);
   expect(wrapper).toMatchSnapshot();
 });
 
