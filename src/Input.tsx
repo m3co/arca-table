@@ -24,12 +24,42 @@ export class Input
   }
 
   public static defaultProps: DefaultProps = {
-    type: 'Text',
+    type: 'text',
   }
 
   public constructor(props: Props) {
-    super(props);
+    super(props)
     this.state.value = this.props.value;
+    if (this.props.type?.toLowerCase() === 'date') {
+      this.state.value = this.props.value ?
+        this.toDate(this.dateToArray(new Date(this.props.value.toString()))) :
+        '';
+    }
+    if (this.props.type?.toLowerCase() === 'datetime-local') {
+      this.state.value = this.props.value ?
+        this.toDateTime(this.dateToArray(new Date(this.props.value.toString()))) :
+        '';
+    }
+  }
+
+  private dateToArray(d: Date) {
+    return d.toLocaleString(undefined, {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false,
+    }).match(/(\d+)/g)
+  }
+
+  private toDate(d: RegExpMatchArray | null) {
+    return d === null ? '' : `${d[2]}-${d[0]}-${d[1]}`;
+  }
+
+  private toDateTime(d: RegExpMatchArray | null) {
+    return d === null ? '' : `${d[2]}-${d[0]}-${d[1]}T${d[3]}:${d[4]}:${d[5]}`;
   }
 
   private onChange = (event: React.ChangeEvent<HTMLInputElement>): void => {

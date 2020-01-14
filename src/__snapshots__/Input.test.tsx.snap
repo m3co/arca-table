@@ -18,7 +18,7 @@ exports[`Input changes its numeric value 1`] = `
 
 exports[`Input changes its value 1`] = `
 <Input
-  type="Text"
+  type="text"
   value="value A"
 >
   <input
@@ -26,7 +26,7 @@ exports[`Input changes its value 1`] = `
     onBlur={[Function]}
     onChange={[Function]}
     onKeyUp={[Function]}
-    type="Text"
+    type="text"
     value="value B"
   />
 </Input>
@@ -34,7 +34,7 @@ exports[`Input changes its value 1`] = `
 
 exports[`Input normally 1`] = `
 <Input
-  type="Text"
+  type="text"
   value="value A"
 >
   <input
@@ -42,7 +42,7 @@ exports[`Input normally 1`] = `
     onBlur={[Function]}
     onChange={[Function]}
     onKeyUp={[Function]}
-    type="Text"
+    type="text"
     value="value A"
   />
 </Input>

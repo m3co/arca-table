@@ -183,7 +183,7 @@ export class TCell
                 onEsc={this.cancelEdit}
               />
             )
-          ) : (dirty) ? value : row[column]}
+          ) : (dirty) ? value : row[column]?.toString()}
         </td>
       ) :
       (<td>-</td>);
