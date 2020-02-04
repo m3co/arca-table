@@ -46,7 +46,6 @@ function prepareMock2(searchMock: (Source: keyof State["Source"],
     PK: {
       BuiltInCategory: 'INVALID',
     },
-    Raw: null,
     Name: 'FACAD-BuiltInCategories',
   };
 
