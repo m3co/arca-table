@@ -30,3 +30,12 @@ Por lo tanto, los requerimientos para éste módulo son:
 - Permitir customizar los nombres de las columnas
 - Realizar filtro sobre los datos
 - Realizar orden por columnas
+
+## Stack
+
+- [ReactJS](https://reactjs.org/)
+- [Socket.io](https://socket.io/)
+- [Redux](https://redux.js.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Jest](https://jestjs.io/)
+- [Docker](https://docker.com/)
